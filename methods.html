@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Methods</title>
+    </head>
+    <body>
+
+        <script>
+            //method is a function in an object
+            var brock = {
+                name: "brock",
+                age: 32,
+                potion: 1,
+                hp: 100,
+                drinkPotion: function(){
+                 if(this.potion > 1){
+                     this.hp = this.hp + 10;
+                 }
+                },
+            //in a method its ordered like this
+            //age does not need to be defined in function because its already in the object
+            //this is a method means where something is located or what it belongs too so "this.age" means it looks around and finds age in method
+                likesBluesClues: function(){
+                     if(this.age > 10){
+                        return false;
+                     }else{
+                         return true;
+                     }
+                }
+            }
+
+            //this is a normal function we are familiar with
+            //function needs to be told age because its a stand alone thing
+        function likesBluesClues(age){
+            if(age > 10){
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+        var brock_answer = likesBluesClues(32);
+        var carson_answer = likesBluesClues(4);
+        
+        var brock_object_anser = brock.likesBluesClues();
+
+        </script>
+
+
+    </body>
+</html>

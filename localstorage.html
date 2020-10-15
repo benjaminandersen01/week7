@@ -1,0 +1,35 @@
+<html>
+    <head>
+       <title>Local Storage</title>
+    </head>
+    <body>
+        <p>
+            Current Players Name: <span id='currentName'></span>
+        </p>
+
+        <p>
+            Enter your name: 
+            <input type= "text" id="nameInput"/>
+        </p>
+        
+        <script>
+            var currentName = document.getElementById("currentName");
+            var input = document.getElementById("nameInput");
+            //keyup is used to capture what they just typed
+            input.addEventListener("keyup", updateUsersName);
+
+            function updateUsersName(){
+                //input.value is whatever keyup just collected off there "press"
+                currentName.innerText = input.value;
+
+                updateLocalStorage();
+         }
+         //local storage is long term you can close your browser reopen and sitll have your data, session storage will clear when the browser is closed
+            function updateLocalStorage(){
+                //setItem wants two pieces of information 1. what you want to call the information, 2. what data do you want to store
+                localStorage.setItem("username", input.value);
+            }
+
+        </script>
+    </body>
+</html>
